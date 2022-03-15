@@ -38,7 +38,7 @@ app.use(passport.initialize());
 
 app.use(passport.session());
 
-app.use(express.static('./views'));
+//app.use(express.static('./views'));
 
 app.set('view engine', 'pug');
 
