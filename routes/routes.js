@@ -5,6 +5,7 @@ const isAuth = require('../util/isAuth.js')
 const path = require('path')
 const {fork} = require('child_process');
 const { render } = require('pug');
+const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
 const appRoute = Router();
 const chatRoute = Router();
@@ -16,12 +17,12 @@ const randomRoute = Router();
 const failLoginRoute = Router();
 const failRegisterRoute = Router();
 
-chatRoute.get('/', isAuth,(req,res) => {
+chatRoute.get('/', /*isAuth,*/(req,res) => {
 
     res.render('./layouts/index.pug')
 })
 
-appRoute.get('/', isAuth,(req, res) => {
+appRoute.get('/', /*isAuth,*/(req, res) => {
         let products = prodGen();
         let user = req.session.email
         res.render('./layouts/productos.pug',{products,user})
@@ -72,7 +73,7 @@ failRegisterRoute.get('/',(req, res)=>{
     res.render('./layouts/registrofail.pug')
 })
 
-infoRoute.get('/', isAuth,(req,res) =>{
+infoRoute.get('/', /*isAuth,*/(req,res) =>{
     console.log(numCPUs)
     let infoSys ={
         Argumentos: process.argv,

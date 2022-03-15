@@ -1,0 +1,60 @@
+------------------------------
+PRIMERA PARTE DE LA CONSIGNA
+------------------------------
+
+node server.js -p 8081 -m FORK 
+
+node server.js -p 8081 -m CLUSTER
+
+control+c control+c
+
+nodemon server.js -p 8081 -m FORK 
+
+nodemon server.js -p 8081 -m CLUSTER
+
+control+c control+c
+
+forever server.js -p 8081 -m FORK
+
+forever server.js -p 8081 -m CLUSTER
+
+forever list
+
+tasklist /fi "imagename eq node.exe"
+
+control+c control+c
+
+
+pm2 start server.js name="Server1" --watch -- 8080
+
+
+pm2 start server.js name="Server1" --watch -i max -- 8081
+
+pm2 list
+
+pm2 monit
+
+control+c control+c
+
+--------------------------
+PARTE DE NGINX - parte1
+--------------------------
+node server.js -p 8081 -m FORK 
+
+node server.js -p 8081 -m CLUSTER
+
+abrir nginx.exe o poner nginx.exe en la consola 
+
+tasklist /fi "imagename eq nginx.exe"
+
+luego entrar tanto a localhost/api/randoms, hacer la carga de numero e ir a otra secciones
+
+luego entrar a nginx.conf descomentar los puertos 8082,8083 y 8084 y sus location y comentar el puerto 8081 y su location
+
+ejecutar nginx.exe -s reload
+
+
+
+
+
+

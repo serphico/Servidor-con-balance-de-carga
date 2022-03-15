@@ -47,7 +47,7 @@ app.set('views', "./views");
 app.use(express.json())
 
 app.use(express.urlencoded({extended:true}))
-p
+
 app.use('/login', loginRoute);
 
 app.use('/registro', registerRoute);
